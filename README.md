@@ -1,59 +1,44 @@
-# Caos
+# CAOS
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+CAOS (_kah-oos_), which stands for "Chaotic And Odd Stories", is a simple app to manage owned tabletop rolepaying games (TTRPG), and record game sessions as well as notes about game sessions.
 
-## Development server
+## STATUS
 
-To start a local development server, run:
+This project is still in early ideation and planning.
+Come back later for new developments.
 
-```bash
-ng serve
-```
+## The stack
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+(For now) this project is developed only using Angular, however the tech stack will build up over time as the project grows. 
 
-## Code scaffolding
+## Motivation
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+CAOS started development as a practice project to learn how to develop in Angular, being created in the context os the Upskill course, however i've personally have been waiting for an oportunity to develop an app that can be used withing the TTRPG hobby. As such, this app will start as a mere project to learn Angular and will grow over time in order to introduce multiple other features that will be useful within the hobby.
 
-```bash
-ng generate component component-name
-```
+## To do & Future Plans
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- [ ] VERSION 1: Personal shelf
+- - [ ] Simple record of owned TTRPG games, ephemeral storage (CLI version)
+- - [ ] CRUD of data
+- - [ ] Minimalist GUI forms and lists in Angular
+- - [ ] Memory implementation using localStorage
+- - [ ] Create dashboard
+- - [ ] Create feature rich Reads with result filters
+- - [ ] Work on UI and responsiveness 
 
-```bash
-ng generate --help
-```
+- [ ] VERSION 2: Raiding the library
+- - [ ] Integration with the [RPGGeek](https://rpggeek.com/) database 
 
-## Building
+- [ ] VERSION 3: Immunity to amnesia
+- - [ ] Implement persistant memory & databases
+- - - NoSLQ? (mongodb, json...)
+- - - SQL? (sqlite...
+- - - - TO BE DECIDED YET
 
-To build the project run:
+- [ ] VERSION 4: Solo adventurer journal
+- - [ ] Dice roller
+- - [ ] Simple oracle
+- - [ ] Note taking (export to markdown files?)
 
-```bash
-ng build
-```
+- [ ] VERSION 5+: here be dragons...
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
