@@ -1,6 +1,6 @@
 # CAOS
 
-CAOS (_kah-oos_), which stands for "Chaotic And Odd Stories", is a simple app to manage owned tabletop rolepaying games (TTRPG), and record game sessions as well as notes about game sessions.
+CAOS (_kah-oos_), which stands for "Chaotic Archive Of Sagas", is a simple app to manage owned tabletop rolepaying games (TTRPG), and record game sessions as well as notes about game sessions.
 
 ## STATUS
 
@@ -9,7 +9,7 @@ Come back later for new developments.
 
 ## The stack
 
-(For now) this project is developed only using Angular, however the tech stack will build up over time as the project grows. 
+(For now) this project is developed only using Angular, however the tech stack will build up over time as the project grows.
 
 ## Motivation
 
@@ -24,10 +24,10 @@ CAOS started development as a practice project to learn how to develop in Angula
 - - [ ] Memory implementation using localStorage
 - - [ ] Create dashboard
 - - [ ] Create feature rich Reads with result filters
-- - [ ] Work on UI and responsiveness 
+- - [ ] Work on UI and responsiveness
 
 - [ ] VERSION 2: Raiding the library
-- - [ ] Integration with the [RPGGeek](https://rpggeek.com/) database 
+- - [ ] Integration with the [RPGGeek](https://rpggeek.com/) database
 
 - [ ] VERSION 3: Immunity to amnesia
 - - [ ] Implement persistant memory & databases
@@ -41,4 +41,3 @@ CAOS started development as a practice project to learn how to develop in Angula
 - - [ ] Note taking (export to markdown files?)
 
 - [ ] VERSION 5+: here be dragons...
-
