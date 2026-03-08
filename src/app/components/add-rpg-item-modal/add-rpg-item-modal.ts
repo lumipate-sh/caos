@@ -1,22 +1,23 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Component, inject, ChangeDetectionStrategy, computed } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { RpgItemService } from '../../services/rpg-item-service';
-import { MatFormFieldModule, MatFormFieldControl } from '@angular/material/form-field';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {
+    MatAutocompleteModule,
+    type MatAutocompleteSelectedEvent,
+} from '@angular/material/autocomplete';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
-import { COMMA, ENTER } from '@angular/cdk/keycodes';
-import { map, Observable, startWith } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
-import { RpgItem } from '../../schema/rpg-item';
+import { map, startWith } from 'rxjs';
+import type { RpgItem } from '../../schema/rpg-item';
 
 export interface AddRpgItemModalData {
     item?: RpgItem;
@@ -25,6 +26,7 @@ export interface AddRpgItemModalData {
 @Component({
     selector: 'app-add-rpg-item-modal',
     imports: [
+        FormsModule,
         ReactiveFormsModule,
         MatFormFieldModule,
         MatSelectModule,
@@ -37,7 +39,6 @@ export interface AddRpgItemModalData {
         MatAutocompleteModule,
         MatChipsModule,
         MatIconModule,
-        AsyncPipe,
     ],
     templateUrl: './add-rpg-item-modal.html',
     styleUrl: './add-rpg-item-modal.css',
@@ -48,37 +49,44 @@ export class AddRpgItemModal {
     private dialogRef = inject(MatDialogRef<AddRpgItemModal>);
     private data = inject<AddRpgItemModalData>(MAT_DIALOG_DATA);
 
-    isEditMode = !!this.data?.item;
-    editingItem = this.data?.item;
+    isEditMode: boolean = !!this.data?.item;
+    editingItem: RpgItem | undefined = this.data?.item;
 
-    readonly separatorKeysCodes = [ENTER, COMMA] as const;
 
-    tags: string[] = this.rpgItem.tagsSignal();
+    tags = computed(() => this.rpgItem.tagsSignal());
 
     tagInput = new FormControl('');
 
-    filteredTags: Observable<string[]> = this.tagInput.valueChanges.pipe(
-        startWith(''),
-        map((value) => this._filter(value || '')),
+    filteredTags = toSignal(
+        this.tagInput.valueChanges.pipe(
+            startWith(''),
+            map((value) => this._filter(value || '')),
+        ),
+        { initialValue: [] as string[] },
     );
 
     private _filter(value: string): string[] {
         const filterValue = value.toLowerCase();
-        return this.tags.filter((tag) => tag.toLowerCase().includes(filterValue));
+        return this.tags().filter((tag) => tag.toLowerCase().includes(filterValue));
     }
 
-    addTag(event: any): void {
-        const value = (event.value || '').trim();
-        if (value) {
+    addTag(value: string): void {
+        const trimmedValue = value.trim();
+        if (trimmedValue) {
             const currentTags = this.newRpgItemForm.get('itemTags')?.value || [];
-            if (!currentTags.includes(value)) {
+            if (!currentTags.includes(trimmedValue)) {
                 this.newRpgItemForm.patchValue({
-                    itemTags: [...currentTags, value],
+                    itemTags: [...currentTags, trimmedValue],
                 });
             }
         }
         this.tagInput.setValue('');
-        event.chipInput?.clear();
+    }
+
+    onEnterKey(event: Event): void {
+        event.preventDefault();
+        const value = this.tagInput.value || '';
+        this.addTag(value);
     }
 
     removeTag(tag: string): void {
@@ -91,7 +99,7 @@ export class AddRpgItemModal {
         }
     }
 
-    onTagSelected(event: any): void {
+    onTagSelected(event: MatAutocompleteSelectedEvent): void {
         const value = event.option.value;
         if (value) {
             const currentTags = this.newRpgItemForm.get('itemTags')?.value || [];
@@ -99,9 +107,6 @@ export class AddRpgItemModal {
                 this.newRpgItemForm.patchValue({
                     itemTags: [...currentTags, value],
                 });
-            }
-            if (!this.tags.includes(value)) {
-                this.tags = [...this.tags, value];
             }
         }
         this.tagInput.setValue('');

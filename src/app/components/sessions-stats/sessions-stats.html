@@ -1,0 +1,33 @@
+@if (totalSessions() > 0) {
+    <mat-card class="featured-card sessions-card">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>event_note</mat-icon>
+            <mat-card-title>Your Sessions</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="collection-stats">
+                You've recorded <strong>{{ totalSessions() }}</strong> sessions. Your latest session
+                was <strong>{{ latestSession()!.sessionDate | formatDate }}</strong> -
+                {{ getGameName(latestSession()!.gameId) }}.
+                @if (upcomingSessions().length > 0) {
+                    You have <strong>{{ upcomingSessions().length }}</strong> sessions scheduled!
+                    The next one is on
+                    <strong>{{ nextSession()!.sessionDate | formatDate }}</strong> -
+                    {{ getGameName(nextSession()!.gameId) }}.
+                }
+            </p>
+        </mat-card-content>
+    </mat-card>
+} @else {
+    <mat-card class="featured-card sessions-card">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>event_note</mat-icon>
+            <mat-card-title>Your Sessions</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p class="collection-stats">
+                No sessions recorded yet. Start playing and record your first session!
+            </p>
+        </mat-card-content>
+    </mat-card>
+}

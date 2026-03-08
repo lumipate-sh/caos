@@ -2,16 +2,16 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="newSessionForm">
         <mat-form-field class="example-full-width">
-            <mat-label>Session Date *</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="sessionDate" />
+            <mat-label>Session Date</mat-label>
+            <input matInput required [matDatepicker]="picker" formControlName="sessionDate" />
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
 
         <mat-form-field class="example-full-width">
-            <mat-label>Select Game *</mat-label>
-            <mat-select formControlName="gameId">
-                @for (item of rpgItems; track item.metadata.id) {
+            <mat-label>Select Game</mat-label>
+            <mat-select required formControlName="gameId">
+                @for (item of rpgItems(); track item.metadata.id) {
                     <mat-option [value]="item.metadata.id">{{ item.title }}</mat-option>
                 }
             </mat-select>
@@ -28,12 +28,12 @@
         </mat-form-field>
 
         <mat-dialog-actions align="end">
-            <button mat-button mat-dialog-close>Cancel</button>
+            <button type="button" mat-button mat-dialog-close>Cancel</button>
             <button
+                type="button"
                 mat-button
                 (click)="onSubmit()"
                 [disabled]="!newSessionForm.valid"
-                cdkFocusInitial
             >
                 Add Session
             </button>

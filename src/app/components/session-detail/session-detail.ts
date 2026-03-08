@@ -9,12 +9,19 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialog } from '@angular/material/dialog';
 import { RpgSessionService } from '../../services/rpg-session-service';
 import { RpgItemService } from '../../services/rpg-item-service';
-import { RpgSession } from '../../schema/rpg-session';
 import { AddRpgSession } from '../add-rpg-session/add-rpg-session';
+import { FormatDatePipe } from '../../pipes/format-date-pipe';
 
 @Component({
     selector: 'app-session-detail',
-    imports: [CommonModule, MatCardModule, MatButtonModule, MatIconModule, RouterLink],
+    imports: [
+        CommonModule,
+        MatCardModule,
+        MatButtonModule,
+        MatIconModule,
+        RouterLink,
+        FormatDatePipe,
+    ],
     templateUrl: './session-detail.html',
     styleUrl: './session-detail.css',
 })
@@ -36,16 +43,6 @@ export class SessionDetail {
     getGameTitle(gameId: number): string {
         const item = this.rpgItemService.listSignal().find((i) => i.metadata.id === gameId);
         return item ? item.title : 'Unknown Game';
-    }
-
-    formatDate(date: Date | string): string {
-        const d = new Date(date);
-        return d.toLocaleDateString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
     }
 
     openEditModal(): void {

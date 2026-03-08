@@ -1,0 +1,12 @@
+<mat-card class="featured-card">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>library_books</mat-icon>
+        <mat-card-title>Your Collection</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p class="collection-stats">
+            You have <strong>{{ ownedCount() }}</strong> books, but still have
+            <strong>{{ wishlistCount() }}</strong> on your wishlist!
+        </p>
+    </mat-card-content>
+</mat-card>

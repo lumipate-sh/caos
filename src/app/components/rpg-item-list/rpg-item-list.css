@@ -1,6 +1,6 @@
 h2 {
     margin-bottom: 24px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--mat-sys-on-surface);
 }
 
 .filters {
@@ -10,7 +10,7 @@ h2 {
     align-items: center;
     margin-bottom: 24px;
     padding: 16px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--mat-sys-surface-container);
     border-radius: 8px;
 }
 
@@ -23,7 +23,7 @@ h2 {
 }
 
 .empty-message {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--mat-sys-on-surface-variant);
     font-style: italic;
 }
 
@@ -35,8 +35,8 @@ h2 {
 }
 
 .item-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+    background-color: var(--gruvbox-bg-alt);
+    color: var(--mat-sys-on-surface);
 }
 
 .badge {
@@ -45,15 +45,18 @@ h2 {
     margin-right: 8px;
     border-radius: 4px;
     font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--gruvbox-box);
+    color: var(--gruvbox-text);
 }
 
 .badge.owned {
-    background-color: #4caf50;
+    background-color: var(--gruvbox-interact);
+    color: var(--gruvbox-bg);
 }
 
 .badge.wishlist {
-    background-color: #ff9800;
+    background-color: var(--gruvbox-accent);
+    color: var(--gruvbox-bg);
 }
 
 .tags {
@@ -68,6 +71,6 @@ h2 {
     padding: 2px 8px;
     border-radius: 12px;
     font-size: 11px;
-    background-color: rgba(255, 255, 255, 0.15);
-    color: rgba(255, 255, 255, 0.8);
+    background-color: var(--gruvbox-head-med);
+    color: var(--gruvbox-bg);
 }

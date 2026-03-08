@@ -12,6 +12,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FormatDatePipe } from '../../pipes/format-date-pipe';
 
 @Component({
     selector: 'app-session-list',
@@ -27,6 +28,7 @@ import { MatNativeDateModule } from '@angular/material/core';
         MatInputModule,
         MatDatepickerModule,
         MatNativeDateModule,
+        FormatDatePipe,
     ],
     templateUrl: './session-list.html',
     styleUrl: './session-list.css',
@@ -80,16 +82,6 @@ export class SessionList {
     getGameTitle(gameId: number): string {
         const item = this.rpgItems.find((i) => i.metadata.id === gameId);
         return item ? item.title : 'Unknown Game';
-    }
-
-    formatDate(date: Date | string): string {
-        const d = new Date(date);
-        return d.toLocaleDateString('en-US', {
-            weekday: 'short',
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric',
-        });
     }
 
     clearFilters(): void {

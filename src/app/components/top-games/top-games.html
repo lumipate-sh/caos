@@ -1,0 +1,18 @@
+@if (topRatedGames().length > 0) {
+    <mat-card class="featured-card top-games-card">
+        <mat-card-header>
+            <mat-icon mat-card-avatar>emoji_events</mat-icon>
+            <mat-card-title>Your Top Games So Far</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <ol class="top-games-list">
+                @for (game of topRatedGames(); track game.metadata.id) {
+                    <li>
+                        <span class="game-title">{{ game.title }}</span>
+                        <span class="game-rating">({{ game.userRating }}/20)</span>
+                    </li>
+                }
+            </ol>
+        </mat-card-content>
+    </mat-card>
+}

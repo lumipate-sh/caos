@@ -9,8 +9,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDialog } from '@angular/material/dialog';
 import { RpgItemService } from '../../services/rpg-item-service';
-import { RpgItem } from '../../schema/rpg-item';
 import { AddRpgItemModal } from '../add-rpg-item-modal/add-rpg-item-modal';
+import { FormatDatePipe } from '../../pipes/format-date-pipe';
 
 @Component({
     selector: 'app-rpg-item-detail',
@@ -21,6 +21,7 @@ import { AddRpgItemModal } from '../add-rpg-item-modal/add-rpg-item-modal';
         MatIconModule,
         MatChipsModule,
         RouterLink,
+        FormatDatePipe,
     ],
     templateUrl: './rpg-item-detail.html',
     styleUrl: './rpg-item-detail.css',
@@ -37,15 +38,6 @@ export class RpgItemDetail {
     item = computed(() =>
         this.rpgItemService.listSignal().find((i) => i.metadata.id === this.itemId()),
     );
-
-    formatDate(date: Date | string): string {
-        const d = new Date(date);
-        return d.toLocaleDateString('en-US', {
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-        });
-    }
 
     openEditModal(): void {
         if (!this.item()) return;

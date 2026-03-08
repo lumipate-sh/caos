@@ -2,8 +2,8 @@
 <mat-dialog-content class="mat-typography">
     <form [formGroup]="newRpgItemForm">
         <mat-form-field>
-            <mat-label>Title*</mat-label>
-            <input formControlName="title" matInput />
+            <mat-label>Title</mat-label>
+            <input required formControlName="title" matInput />
         </mat-form-field>
         <mat-form-field>
             <mat-label>Description</mat-label>
@@ -11,33 +11,15 @@
         </mat-form-field>
         <mat-form-field>
             <mat-label>Authors (separate with ',')</mat-label>
-
             <input formControlName="authors" matInput />
         </mat-form-field>
         <mat-form-field>
             <mat-label>Type of item</mat-label>
-            <mat-select formControlName="itemType">
+            <mat-select required formControlName="itemType">
                 <mat-option value="core">Core rules book</mat-option>
                 <mat-option value="module">Module</mat-option>
             </mat-select>
         </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-            <mat-label>Tags</mat-label>
-            <input
-                type="text"
-                matInput
-                [formControl]="tagInput"
-                [matAutocomplete]="auto"
-                placeholder="Type to search or add tag"
-            />
-            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onTagSelected($event)">
-                @for (tag of filteredTags | async; track tag) {
-                    <mat-option [value]="tag">{{ tag }}</mat-option>
-                }
-            </mat-autocomplete>
-        </mat-form-field>
-
         @if (selectedTags.length > 0) {
             <mat-chip-set class="selected-tags-chips">
                 @for (tag of selectedTags; track tag) {
@@ -51,7 +33,24 @@
             </mat-chip-set>
         }
 
-        <!-- tags go here -->
+        <mat-form-field class="example-full-width">
+            <mat-label>Tags</mat-label>
+            <input
+                type="text"
+                matInput
+                [formControl]="tagInput"
+                [matAutocomplete]="auto"
+                placeholder="Type to search or add tag"
+                (keydown.enter)="onEnterKey($event)"
+            />
+            <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onTagSelected($event)">
+                @for (tag of filteredTags(); track tag) {
+                    <mat-option [value]="tag">{{ tag }}</mat-option>
+                }
+            </mat-autocomplete>
+        </mat-form-field>
+
+
         <mat-form-field>
             <mat-label>Year Released</mat-label>
             <input formControlName="yearReleased" matInput />
@@ -77,8 +76,8 @@
         </section>
 
         <mat-dialog-actions align="end">
-            <button mat-button mat-dialog-close>Cancel</button>
-            <button mat-button (click)="onSubmit()" cdkFocusInitial>Add</button>
+            <button type="button" mat-button mat-dialog-close>Cancel</button>
+            <button type="button" mat-button (click)="onSubmit()">Add</button>
         </mat-dialog-actions>
     </form>
 </mat-dialog-content>
