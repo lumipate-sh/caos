@@ -53,7 +53,19 @@ While this project has basic functionality working, it was a first project using
 
 ## Instructions
 
+To run the app, enter its root folder and, in the terminal, run:
+```bash
+ng serve
+```
+or 
+```bash
+npm start
+```
+After that, open your browser of choice and go to (https://localhost:4200)[https://localhost:4200] to use the app.
+
+
 ## CREDITS
+
 the challenge to make this app was given in the context of the Upskill course, which providade classes, guidance and material.
 
 ### color theme
