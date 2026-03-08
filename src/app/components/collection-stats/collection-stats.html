@@ -1,0 +1,13 @@
+<mat-card class="featured-card">
+    <mat-card-header>
+        <mat-icon mat-card-avatar>library_books</mat-icon>
+        <mat-card-title>Your Collection</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="collection-stats">
+        <p>
+            You have <strong>{{ ownedCount() }}</strong> RPG books,<br />
+            but still have
+            <strong>{{ wishlistCount() }}</strong> on your wishlist!
+        </p>
+    </mat-card-content>
+</mat-card>

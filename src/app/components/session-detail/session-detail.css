@@ -1,0 +1,91 @@
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--mat-sys-on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--mat-sys-primary);
+}
+
+.detail-card {
+    background-color: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-surface);
+}
+
+.detail-title {
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: var(--mat-sys-on-surface);
+}
+
+.game-title {
+    font-size: 16px;
+    color: var(--mat-sys-on-surface-variant);
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: var(--mat-sys-on-surface-variant);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--mat-sys-on-surface);
+}
+
+.notes {
+    white-space: pre-wrap;
+    background-color: var(--mat-sys-surface-container-high);
+    padding: 16px;
+    border-radius: 4px;
+    min-height: 100px;
+    color: var(--mat-sys-on-surface);
+}
+
+.no-notes {
+    color: var(--mat-sys-on-surface-variant);
+    font-style: italic;
+}
+
+.metadata {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.metadata p {
+    margin: 4px 0;
+    color: var(--mat-sys-on-surface-variant);
+}
+
+.not-found {
+    color: var(--mat-sys-on-surface-variant);
+    font-style: italic;
+}

@@ -1,0 +1,105 @@
+<div class="detail-container">
+    <div class="header-actions">
+        <a routerLink="/items" class="back-link">
+            <mat-icon>arrow_back</mat-icon>
+            Back to list
+        </a>
+        <button mat-icon-button (click)="openEditModal()" aria-label="Edit item">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+
+    @if (item(); as itemData) {
+        <mat-card class="detail-card">
+            <mat-card-header>
+                <mat-card-title class="detail-title">{{ itemData.title }}</mat-card-title>
+                <mat-card-subtitle>
+                    @if (itemData.isOwned) {
+                        <span class="badge owned">Owned</span>
+                    }
+                    @if (itemData.onWishList) {
+                        <span class="badge wishlist">Wishlist</span>
+                    }
+                    <span class="badge type">{{ itemData.itemType }}</span>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                @if (itemData.description) {
+                    <div class="field">
+                        <label>Description</label>
+                        <p>{{ itemData.description }}</p>
+                    </div>
+                }
+
+                @if (itemData.authors && itemData.authors.length > 0) {
+                    <div class="field">
+                        <label>Authors</label>
+                        <p>{{ itemData.authors.join(', ') }}</p>
+                    </div>
+                }
+
+                @if (itemData.itemTags && itemData.itemTags.length > 0) {
+                    <div class="field">
+                        <label>Tags</label>
+                        <mat-chip-set>
+                            @for (tag of itemData.itemTags; track tag) {
+                                <mat-chip>{{ tag }}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    </div>
+                }
+
+                @if (itemData.yearReleased) {
+                    <div class="field">
+                        <label>Year Released</label>
+                        <p>{{ itemData.yearReleased }}</p>
+                    </div>
+                }
+
+                @if (itemData.userRating > 0) {
+                    <div class="field">
+                        <label>My Rating</label>
+                        <p>{{ itemData.userRating }}/20</p>
+                    </div>
+                }
+
+                @if (itemData.website) {
+                    <div class="field">
+                        <label>Website</label>
+                        <p>
+                            <a [href]="itemData.website" target="_blank">{{ itemData.website }}</a>
+                        </p>
+                    </div>
+                }
+
+                @if (itemData.notes) {
+                    <div class="field">
+                        <label>Notes</label>
+                        <p class="notes">{{ itemData.notes }}</p>
+                    </div>
+                }
+
+                <div class="metadata">
+                    <p>
+                        <small>Added: {{ itemData.metadata.dateAdded | formatDate }}</small>
+                    </p>
+                    @if (itemData.metadata.datesUpdated.length > 0) {
+                        <p>
+                            <small
+                                >Last updated:
+                                {{
+                                    itemData.metadata.datesUpdated[
+                                        itemData.metadata.datesUpdated.length - 1
+                                    ] | formatDate
+                                }}</small
+                            >
+                        </p>
+                    }
+                </div>
+            </mat-card-content>
+        </mat-card>
+    } @else {
+        <p class="not-found">Item not found.</p>
+    }
+</div>

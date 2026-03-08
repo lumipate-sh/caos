@@ -1,0 +1,12 @@
+<button
+    mat-fab
+    class="theme-toggle-btn"
+    (click)="toggleTheme()"
+    [attr.aria-label]="isDarkMode() ? 'Switch to light mode' : 'Switch to dark mode'"
+>
+    @if (isDarkMode()) {
+        <mat-icon>light_mode</mat-icon>
+    } @else {
+        <mat-icon>dark_mode</mat-icon>
+    }
+</button>

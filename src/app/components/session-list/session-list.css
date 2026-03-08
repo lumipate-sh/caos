@@ -1,0 +1,42 @@
+h2 {
+    margin-bottom: 24px;
+    color: var(--mat-sys-on-surface);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: var(--mat-sys-surface-container);
+    border-radius: 8px;
+}
+
+.filters mat-form-field {
+    min-width: 150px;
+}
+
+.empty-message {
+    color: var(--mat-sys-on-surface-variant);
+    font-style: italic;
+}
+
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 8px;
+    max-width: 600px;
+}
+
+.session-card {
+    background-color: var(--gruvbox-bg-alt);
+    color: var(--mat-sys-on-surface);
+}
+
+.notes {
+    white-space: pre-wrap;
+    color: var(--mat-sys-on-surface-variant);
+}

@@ -1,0 +1,20 @@
+<mat-toolbar>
+    <img [src]="logo" alt="{{logoAltText}}">
+    <span>{{shortTitle}}</span>
+    <span class="example-spacer"></span>
+
+    <button matFab extended (click)="onDemoModeClick()" class="example-icon list-icon" aria-label="enable demo mode">
+        <mat-icon>science</mat-icon>
+        Demo mode
+    </button>
+
+    <button matFab extended (click)='onRecordSessionClick()' class="example-icon list-icon" aria-label="record session">
+        <mat-icon>add_notes</mat-icon>
+        Record session
+    </button>
+
+    <button matFab extended (click)='onAddRpgItemClick()' class="example-icon" aria-label="Button to add new rpg item">
+        <mat-icon>bookmark_add</mat-icon>
+        Add new
+    </button>
+</mat-toolbar>

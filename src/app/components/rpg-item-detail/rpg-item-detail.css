@@ -1,0 +1,110 @@
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--mat-sys-on-surface-variant);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: var(--mat-sys-primary);
+}
+
+.detail-card {
+    background-color: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-surface);
+}
+
+.detail-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+    color: var(--mat-sys-on-surface);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: var(--mat-sys-surface-container-highest);
+    color: var(--mat-sys-on-surface);
+}
+
+.badge.owned {
+    background-color: var(--gruvbox-interact);
+    color: var(--gruvbox-bg);
+}
+
+.badge.wishlist {
+    background-color: var(--gruvbox-accent);
+    color: var(--gruvbox-bg);
+}
+
+.badge.type {
+    background-color: var(--gruvbox-head-med);
+    color: var(--gruvbox-bg);
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: var(--mat-sys-on-surface-variant);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field p {
+    margin: 0;
+    line-height: 1.6;
+    color: var(--mat-sys-on-surface);
+}
+
+.field a {
+    color: var(--mat-sys-primary);
+    word-break: break-all;
+}
+
+.notes {
+    white-space: pre-wrap;
+    background-color: var(--mat-sys-surface-container-high);
+    padding: 12px;
+    border-radius: 4px;
+    color: var(--mat-sys-on-surface);
+}
+
+.metadata {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mat-sys-outline-variant);
+}
+
+.metadata p {
+    margin: 4px 0;
+    color: var(--mat-sys-on-surface-variant);
+}
+
+.not-found {
+    color: var(--mat-sys-on-surface-variant);
+    font-style: italic;
+}
