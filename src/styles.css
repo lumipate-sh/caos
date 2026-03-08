@@ -1,5 +1,7 @@
 /* Import Gruvbox theme */
 @import './app/theme/gruvbox.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
 
 /* Export Gruvbox colors as CSS variables for component use */
 :root {
@@ -126,4 +128,65 @@ html[data-theme='light'] {
 body {
     background-color: var(--mat-sys-surface) !important;
     color: var(--mat-sys-on-surface) !important;
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Headings use Press Start 2P */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Card titles also use Press Start 2P */
+::ng-deep mat-card-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Toolbar/header text */
+::ng-deep mat-toolbar {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Dialog titles */
+::ng-deep mat-dialog-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Header buttons and title */
+::ng-deep mat-toolbar span,
+::ng-deep mat-toolbar .mat-mdc-button,
+::ng-deep mat-toolbar .mat-mdc-fab,
+::ng-deep mat-toolbar .mat-mdc-extended-fab {
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 10px !important;
+}
+
+/* Dashboard card headers */
+::ng-deep .featured-card mat-card-header,
+::ng-deep .featured-card mat-card-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Material form field labels */
+::ng-deep .mat-mdc-form-field-label,
+::ng-deep .mat-mdc-floating-label {
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Material button text */
+::ng-deep .mat-mdc-button,
+::ng-deep .mat-mdc-raised-button,
+::ng-deep .mat-mdc-flat-button,
+::ng-deep .mat-mdc-fab,
+::ng-deep .mat-mdc-extended-fab {
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Remove all border radius - sharp corners */
+* {
+    border-radius: 0 !important;
 }

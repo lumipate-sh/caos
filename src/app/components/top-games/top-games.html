@@ -8,8 +8,7 @@
             <ol class="top-games-list">
                 @for (game of topRatedGames(); track game.metadata.id) {
                     <li>
-                        <span class="game-title">{{ game.title }}</span>
-                        <span class="game-rating">({{ game.userRating }}/20)</span>
+                      <strong>  <span class="game-title">{{ game.title }}</span></strong>
                     </li>
                 }
             </ol>

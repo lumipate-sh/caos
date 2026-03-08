@@ -4,14 +4,14 @@
             <mat-icon mat-card-avatar>event_note</mat-icon>
             <mat-card-title>Your Sessions</mat-card-title>
         </mat-card-header>
-        <mat-card-content>
-            <p class="collection-stats">
-                You've recorded <strong>{{ totalSessions() }}</strong> sessions. Your latest session
-                was <strong>{{ latestSession()!.sessionDate | formatDate }}</strong> -
-                {{ getGameName(latestSession()!.gameId) }}.
-                @if (upcomingSessions().length > 0) {
+        <mat-card-content class="collection-stats">
+            <p>You've recorded <strong>{{ totalSessions() }}</strong> sessions. </p>
+            <p>Your latest session
+                was on <br> <strong>{{ latestSession()!.sessionDate | formatDate }}</strong>,<br/> and you played <br> <strong>
+                {{ getGameName(latestSession()!.gameId) }}</strong>.</p>
+                <p>@if (upcomingSessions().length > 0) {
                     You have <strong>{{ upcomingSessions().length }}</strong> sessions scheduled!
-                    The next one is on
+                    <br/>The next one is on
                     <strong>{{ nextSession()!.sessionDate | formatDate }}</strong> -
                     {{ getGameName(nextSession()!.gameId) }}.
                 }

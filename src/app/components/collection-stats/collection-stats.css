@@ -1,11 +1,17 @@
 .featured-card {
-    max-width: 600px;
+    width: 600px;
     background-color: var(--gruvbox-bg-alt);
     color: var(--gruvbox-text);
 }
 
 .featured-card mat-card-header {
-    margin-bottom: 16px;
+    justify-content: center;
+    text-align: center;
+}
+
+.featured-card mat-card-content {
+    padding: 8px 16px;
+    text-align: center;
 }
 
 .featured-card mat-icon.mat-card-avatar {
@@ -22,19 +28,16 @@
 }
 
 .featured-card mat-card-title {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 500;
-    color: var(--gruvbox-text);
-}
-
-.featured-card mat-card-content {
-    padding: 16px 0;
+    color: var(--gruvbox-head-high);
+    font-family: 'Press Start 2P', cursive !important;
 }
 
 .collection-stats {
     font-size: 18px;
     line-height: 1.6;
-    margin: 0;
+    margin: 1em;
     color: var(--gruvbox-text);
 }
 
