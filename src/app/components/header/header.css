@@ -4,7 +4,7 @@
 
 img {
     position: inherit;
-    height: 80%;
+    height: 100%;
 }
 
 /* Header font styling */
@@ -14,7 +14,7 @@ mat-toolbar {
 
 mat-toolbar span {
     font-family: 'Press Start 2P', cursive !important;
-    font-size: 12px !important;
+    font-size: 18px !important;
 }
 
 mat-toolbar button,
@@ -22,5 +22,6 @@ mat-toolbar .mat-mdc-button,
 mat-toolbar .mat-mdc-fab,
 mat-toolbar .mat-mdc-extended-fab {
     font-family: 'Press Start 2P', cursive !important;
-    font-size: 8px !important;
+    font-size: 16px !important;
+    margin-left: 1em;
 }

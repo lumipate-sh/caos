@@ -1,16 +1,16 @@
 import { Component, OnInit, inject, afterNextRender } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
-import { Footer } from './components/footer/footer';
 import { MainContent } from './components/main-content/main-content';
 import { ThemeToggle } from './components/theme-toggle/theme-toggle';
+import { DeleteData } from './components/delete-data/delete-data';
 import { LocalStorageUtils } from './services/local-storage-utils';
 import { RpgItemData } from './schema/rpg-item';
 import { RpgSessionData } from './schema/rpg-session';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, Header, MainContent, Footer, ThemeToggle],
+    imports: [RouterOutlet, Header, MainContent, ThemeToggle, DeleteData],
     templateUrl: './app.html',
     styleUrl: './app.css',
 })
