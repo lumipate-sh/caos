@@ -1,0 +1,24 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+img{
+position:inherit;
+    height:80%;
+}
+
+
+
+
+/* * { */
+/*     display: flex; */
+/*     justify-content: space-between; */
+/*     align-items: center; */
+/*     background-color:#828282; */
+/* } */
+/**/
+/* img{ */
+/*     height:70px */
+/* } */
+/**/
+/**/

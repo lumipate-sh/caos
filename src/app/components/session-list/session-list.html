@@ -1,0 +1,54 @@
+<h2>Sessions</h2>
+
+<div class="filters">
+    <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="startPicker" [(ngModel)]="startDate" />
+        <mat-datepicker-toggle matIconSuffix [for]="startPicker"></mat-datepicker-toggle>
+        <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="endPicker" [(ngModel)]="endDate" />
+        <mat-datepicker-toggle matIconSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Game</mat-label>
+        <mat-select [(ngModel)]="selectedGameId">
+            <mat-option [value]="null">All Games</mat-option>
+            @for (item of rpgItems; track item.metadata.id) {
+                <mat-option [value]="item.metadata.id">{{ item.title }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="applyFilters()">Apply Filters</button>
+    <button mat-button (click)="clearFilters()">Clear</button>
+</div>
+
+@if (filteredSessions.length === 0) {
+    <p class="empty-message">No sessions found. Try adjusting your filters or add a new session.</p>
+} @else {
+    <div class="sessions-list">
+        @for (session of filteredSessions; track session.metadata.id) {
+            <mat-card class="session-card">
+                <mat-card-header>
+                    <mat-card-title>{{ formatDate(session.sessionDate) }}</mat-card-title>
+                    <mat-card-subtitle>{{ getGameTitle(session.gameId) }}</mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-actions align="end">
+                    <a
+                        mat-icon-button
+                        [routerLink]="['/sessions', session.metadata.id]"
+                        aria-label="View details"
+                    >
+                        <mat-icon>visibility</mat-icon>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        }
+    </div>
+}

@@ -1,0 +1,42 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Session' : 'Record New Session' }}</h2>
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="newSessionForm">
+        <mat-form-field class="example-full-width">
+            <mat-label>Session Date *</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="sessionDate" />
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Select Game *</mat-label>
+            <mat-select formControlName="gameId">
+                @for (item of rpgItems; track item.metadata.id) {
+                    <mat-option [value]="item.metadata.id">{{ item.title }}</mat-option>
+                }
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>Session Notes</mat-label>
+            <textarea
+                matInput
+                formControlName="sessionNotes"
+                rows="5"
+                placeholder="Write about your session..."
+            ></textarea>
+        </mat-form-field>
+
+        <mat-dialog-actions align="end">
+            <button mat-button mat-dialog-close>Cancel</button>
+            <button
+                mat-button
+                (click)="onSubmit()"
+                [disabled]="!newSessionForm.valid"
+                cdkFocusInitial
+            >
+                Add Session
+            </button>
+        </mat-dialog-actions>
+    </form>
+</mat-dialog-content>
