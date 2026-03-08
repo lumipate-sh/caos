@@ -4,8 +4,16 @@ CAOS (_kah-oos_), which stands for "Chaotic Archive of Oddities and Sagas", is a
 
 ## STATUS
 
-This project is still in early ideation and planning.
-Come back later for new developments.
+This project has it's first version working on desktop (lacks mobile responsiveness).
+
+It might be archived soon as I intent to do a total refactor of it implementing the lessons i learned during development, and changing directions about the implementation of certain features.
+
+## Current features
+
+- Add and manage RPG items, from basic information about the games, to personal notes, personal rating, and its owned/wishlisted status by the user
+- Add and manage game sessions by date, adding notes and associating them to games already on the app
+- A dashboard that shows basic statistics about owned games and wishlisted games, information about past and upcoming sessions and the list of the highest rated RPGs
+- An option to add dummy data to the app (demo mode) to test features without adding data manually
 
 ## The stack
 
@@ -17,13 +25,14 @@ CAOS started development as a practice project to learn how to develop in Angula
 
 ## To do & Future Plans
 
+While this project has basic functionality working, it was a first project using Angular, and it has thought me a lot. In the future,   
 - [ ] VERSION 1: Personal shelf
 - - [x] Simple record of owned TTRPG games, ephemeral storage (CLI version)
 - - [x] CRUD of data
-- - [ ] Minimalist GUI forms and lists in Angular
-- - [ ] Memory implementation using localStorage
-- - [ ] Create dashboard
-- - [ ] Create feature rich Reads with result filters
+- - [x] Minimalist GUI forms and lists in Angular
+- - [x] Memory implementation using localStorage
+- - [x] Create dashboard
+- - [x] Create feature rich Reads with result filters
 - - [ ] Work on UI and responsiveness
 
 - [ ] VERSION 2: Raiding the library
@@ -42,4 +51,26 @@ CAOS started development as a practice project to learn how to develop in Angula
 
 - [ ] VERSION 5+: here be dragons...
 
+## Instructions
+
 ## CREDITS
+the challenge to make this app was given in the context of the Upskill course, which providade classes, guidance and material.
+
+### color theme
+
+- [Gruvbox](https://github.com/morhetz/gruvbox)
+
+### UI elements
+
+- Angular's Material components were used as a base to the overall GUI 
+
+### fonts
+
+- [Press Start 2P](https://zone38.net/font/#pressstart) by [Cody "CodeMan38" Boisclair](https://zone38.net/), licensed under [SIL Open Font License](https://openfontlicense.org/)   
+- [Overpass](https://overpassfont.org/) by [Delve Fonts](https://delvefonts.com/), licensed under [SIL Open Font License](https://openfontlicense.org/)
+
+
+### AI usage disclosure
+
+some aspects of the development of this app were made with the use of generative artificial intelligente, namely in the generation of dummy data to test the app, the implementation of some functions and debugging and refactoring sections of code.
+artificial inteligence, however, had only a small role in the design decicions of the app regarding features, functionality, features and overall development.
