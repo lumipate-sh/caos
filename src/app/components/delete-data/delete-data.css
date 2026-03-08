@@ -1,0 +1,8 @@
+.delete-btn {
+    position: fixed;
+    bottom: 24px;
+    left: 80px;
+    z-index: 1000;
+    background-color: var(--gruvbox-important) !important;
+    color: var(--gruvbox-bg) !important;
+}

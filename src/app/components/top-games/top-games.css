@@ -1,5 +1,5 @@
 .featured-card {
-    width: 600px;
+    max-width: 600px;
     background-color: var(--gruvbox-bg-alt);
     color: var(--gruvbox-text);
 }
