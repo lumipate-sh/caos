@@ -1,4 +1,4 @@
-import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy, computed } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { RpgSessionService } from '../../services/rpg-session-service';
 import { RpgItemService } from '../../services/rpg-item-service';
@@ -9,8 +9,7 @@ import { MatDialogModule, MatDialogRef, MAT_DIALOG_DATA } from '@angular/materia
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { RpgItem } from '../../schema/rpg-item';
-import { RpgSession } from '../../schema/rpg-session';
+import type { RpgSession } from '../../schema/rpg-session';
 
 export interface AddRpgSessionModalData {
     session?: RpgSession;
@@ -41,7 +40,9 @@ export class AddRpgSession {
     isEditMode = !!this.data?.session;
     editingSession = this.data?.session;
 
-    rpgItems = this.rpgItemService.listSignal().filter((item) => item.metadata.active);
+    rpgItems = computed(() =>
+        this.rpgItemService.listSignal().filter((item) => item.metadata.active),
+    );
 
     newSessionForm: FormGroup;
 
@@ -58,7 +59,7 @@ export class AddRpgSession {
     }
 
     getGameTitle(gameId: number): string {
-        const item = this.rpgItems.find((i) => i.metadata.id === gameId);
+        const item = this.rpgItems().find((i) => i.metadata.id === gameId);
         return item ? item.title : '';
     }
 

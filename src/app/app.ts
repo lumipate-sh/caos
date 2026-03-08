@@ -3,13 +3,14 @@ import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Footer } from './components/footer/footer';
 import { MainContent } from './components/main-content/main-content';
+import { ThemeToggle } from './components/theme-toggle/theme-toggle';
 import { LocalStorageUtils } from './services/local-storage-utils';
 import { RpgItemData } from './schema/rpg-item';
 import { RpgSessionData } from './schema/rpg-session';
 
 @Component({
     selector: 'app-root',
-    imports: [RouterOutlet, Header, MainContent, Footer],
+    imports: [RouterOutlet, Header, MainContent, Footer, ThemeToggle],
     templateUrl: './app.html',
     styleUrl: './app.css',
 })

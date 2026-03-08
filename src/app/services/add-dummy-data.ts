@@ -17,8 +17,8 @@ export class AddDummyData {
         {
 
             metadata: { id: 1, dateAdded: new Date("2024-01-01"), datesUpdated: [], active: true },
-            title: "Player's Handbook (Dungeons & Dragons 5th Edition)",
-            description: "Core rules and Player character creation for the 5th edition of D&D",
+            title: "Dungeons & Dragons 5th Edition",
+            description: "The world's most popular role-playing game.",
             authors: ["Jeremy Crawford", "Mike Mearls"],
             itemType: "core",
             itemTags: ["fantasy", "traditional", "tactical", "d20"],
@@ -31,17 +31,17 @@ export class AddDummyData {
         },
         {
             metadata: { id: 2, dateAdded: new Date("2024-01-02"), datesUpdated: [], active: true },
-            title: "Dungeon's Master Guide (Dungeons & Dragons 5th Edition)",
-            description: "Game Master additional tips and rules, and toolbox for creating adventures and worlds, and list of random tables",
-            authors: ["Jeremy Crawford", "Mike Mearls"],
+            title: "Knave 2nd Edition",
+            description: "The second edition of Knave, one of the most influential RPGs in the OSR movement",
+            authors: ["Ben Milton"],
             itemType: "core",
-            itemTags: ["fantasy", "traditional", "tactical", "d20"],
-            yearReleased: 2014,
+            itemTags: ["fantasy", "traditional", "osr", "d20"],
+            yearReleased: 2023,
             isOwned: true,
             onWishList: false,
-            userRating: 8,
-            website: "https://dnd.wizards.com",
-            notes: "Famously bad for new players and GMs"
+            userRating: 16,
+            website: "https://questingblog.com/knave-2e",
+            notes: "Very simple and a treasure trove of random tables"
         },
         {
             metadata: { id: 3, dateAdded: new Date("2024-01-03"), datesUpdated: [], active: true },
@@ -67,7 +67,7 @@ export class AddDummyData {
             yearReleased: 2016,
             isOwned: false,
             onWishList: true,
-            userRating: 0,
+            userRating: 14,
             website: "https://bladesinthedark.com",
             notes: "very interesting world, highly influential when it comes to design philosophy"
         },
@@ -88,8 +88,8 @@ export class AddDummyData {
         },
         {
             metadata: { id: 6, dateAdded: new Date("2024-01-13"), datesUpdated: [], active: true },
-            title: "Agent's Handbook (Delta Green)",
-            description: "In DELTA GREEN: THE ROLE-PLAYING GAME, you are one of those agents. You’re the one they call when unnatural horrors seep into the world. You fight to keep cosmic evil from claiming human lives and sanity. You conspire to cover it all up so no one else must see what you’ve seen—or learn the terrible truths you’ve discovered. The AGENT'S HANDBOOK is a players-only rulebook for DELTA GREEN: THE ROLE-PLAYING GAME. odern-day investigative horror RPG fighting cosmic threats.",
+            title: "Delta Green",
+            description: "In DELTA GREEN: THE ROLE-PLAYING GAME, you are one of those agents. You’re the one they call when unnatural horrors seep into the world. You fight to keep cosmic evil from claiming human lives and sanity. You conspire to cover it all up so no one else must see what you’ve seen—or learn the terrible truths you’ve discovered. ",
             itemType: "core",
             itemTags: ["modern", "horror", "lovecraftian", "traditional"],
             yearReleased: 2016,
@@ -100,14 +100,14 @@ export class AddDummyData {
         },
         {
             metadata: { id: 7, dateAdded: new Date("2024-01-17"), datesUpdated: [], active: true },
-            title: "Vampire: The Masquerade 5th Edition Core Book",
+            title: "Vampire: The Masquerade 5th Edition",
             description: "Vampire: The Masquerade is the original and ultimate roleplaying game of personal and political horror. You are a vampire, struggling for survival, supremacy, and your own fading humanity—afraid of what you are capable of, and fearful of the inhuman conspiracies that surround you.",
             itemType: "core",
             itemTags: ["gothic", "traditional", "modern", "horror"],
             yearReleased: 2018,
             isOwned: false,
             onWishList: true,
-            userRating: 0,
+            userRating: 15,
             website: "https://www.paradoxinteractive.com/games/world-of-darkness/discover-world-of-darkness/vampire-the-masquerade"
         },
     ]

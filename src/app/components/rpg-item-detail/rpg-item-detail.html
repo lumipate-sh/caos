@@ -82,18 +82,16 @@
 
                 <div class="metadata">
                     <p>
-                        <small>Added: {{ formatDate(itemData.metadata.dateAdded) }}</small>
+                        <small>Added: {{ itemData.metadata.dateAdded | formatDate }}</small>
                     </p>
                     @if (itemData.metadata.datesUpdated.length > 0) {
                         <p>
                             <small
                                 >Last updated:
                                 {{
-                                    formatDate(
-                                        itemData.metadata.datesUpdated[
-                                            itemData.metadata.datesUpdated.length - 1
-                                        ]
-                                    )
+                                    itemData.metadata.datesUpdated[
+                                        itemData.metadata.datesUpdated.length - 1
+                                    ] | formatDate
                                 }}</small
                             >
                         </p>

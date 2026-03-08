@@ -15,23 +15,24 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--mat-sys-on-surface-variant);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .back-link:hover {
-    color: white;
+    color: var(--mat-sys-primary);
 }
 
 .detail-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+    background-color: var(--mat-sys-surface-container);
+    color: var(--mat-sys-on-surface);
 }
 
 .detail-title {
     font-size: 28px;
     margin-bottom: 8px;
+    color: var(--mat-sys-on-surface);
 }
 
 .badge {
@@ -40,19 +41,23 @@
     margin-right: 8px;
     border-radius: 4px;
     font-size: 12px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: var(--mat-sys-surface-container-highest);
+    color: var(--mat-sys-on-surface);
 }
 
 .badge.owned {
-    background-color: #4caf50;
+    background-color: var(--gruvbox-interact);
+    color: var(--gruvbox-bg);
 }
 
 .badge.wishlist {
-    background-color: #ff9800;
+    background-color: var(--gruvbox-accent);
+    color: var(--gruvbox-bg);
 }
 
 .badge.type {
-    background-color: #2196f3;
+    background-color: var(--gruvbox-head-med);
+    color: var(--gruvbox-bg);
 }
 
 .field {
@@ -63,7 +68,7 @@
     display: block;
     font-weight: bold;
     margin-bottom: 4px;
-    color: rgba(255, 255, 255, 0.7);
+    color: var(--mat-sys-on-surface-variant);
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -72,32 +77,34 @@
 .field p {
     margin: 0;
     line-height: 1.6;
+    color: var(--mat-sys-on-surface);
 }
 
 .field a {
-    color: #64b5f6;
+    color: var(--mat-sys-primary);
     word-break: break-all;
 }
 
 .notes {
     white-space: pre-wrap;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--mat-sys-surface-container-high);
     padding: 12px;
     border-radius: 4px;
+    color: var(--mat-sys-on-surface);
 }
 
 .metadata {
     margin-top: 32px;
     padding-top: 16px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid var(--mat-sys-outline-variant);
 }
 
 .metadata p {
     margin: 4px 0;
-    color: rgba(255, 255, 255, 0.5);
+    color: var(--mat-sys-on-surface-variant);
 }
 
 .not-found {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--mat-sys-on-surface-variant);
     font-style: italic;
 }

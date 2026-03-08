@@ -13,7 +13,7 @@
         <mat-card class="detail-card">
             <mat-card-header>
                 <mat-card-title class="detail-title">{{
-                    formatDate(sessionData.sessionDate)
+                    sessionData.sessionDate | formatDate
                 }}</mat-card-title>
                 <mat-card-subtitle>
                     <span class="game-title">{{ getGameTitle(sessionData.gameId) }}</span>
@@ -38,18 +38,16 @@
                         <small>Session ID: {{ sessionData.metadata.id }}</small>
                     </p>
                     <p>
-                        <small>Added: {{ formatDate(sessionData.metadata.dateAdded) }}</small>
+                        <small>Added: {{ sessionData.metadata.dateAdded | formatDate }}</small>
                     </p>
                     @if (sessionData.metadata.datesUpdated.length > 0) {
                         <p>
                             <small
                                 >Last updated:
                                 {{
-                                    formatDate(
-                                        sessionData.metadata.datesUpdated[
-                                            sessionData.metadata.datesUpdated.length - 1
-                                        ]
-                                    )
+                                    sessionData.metadata.datesUpdated[
+                                        sessionData.metadata.datesUpdated.length - 1
+                                    ] | formatDate
                                 }}</small
                             >
                         </p>

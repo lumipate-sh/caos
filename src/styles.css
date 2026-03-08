@@ -1,1 +1,192 @@
-/* You can add global styles to this file, and also import other style files */
+/* Import Gruvbox theme */
+@import './app/theme/gruvbox.css';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+/* Export Gruvbox colors as CSS variables for component use */
+:root {
+    /* Dark mode Gruvbox (default) */
+    --gruvbox-bg: #3c3836;
+    --gruvbox-bg-alt: #282828;
+    --gruvbox-fg: #928374;
+    --gruvbox-fg-alt: #7c6f64;
+    --gruvbox-box: #665c54;
+    --gruvbox-head-high: #8ec07c;
+    --gruvbox-head-med: #689d6a;
+    --gruvbox-head-low: #98971a;
+    --gruvbox-text: #ebdbb2;
+    --gruvbox-text-strong: #d79921;
+    --gruvbox-text-weak: #a89984;
+    --gruvbox-interact: #689d6a;
+    --gruvbox-interact-alt: #8ec07c;
+    --gruvbox-important: #fb4934;
+    --gruvbox-pop: #d38690;
+    --gruvbox-accent: #d79921;
+}
+
+/* Light mode Gruvbox */
+html[data-theme='light'] {
+    --gruvbox-bg: #fbf1c7;
+    --gruvbox-bg-alt: #ebdbb2;
+    --gruvbox-fg: #928374;
+    --gruvbox-fg-alt: #7c6f64;
+    --gruvbox-box: #bdae93;
+    --gruvbox-head-high: #689d6a;
+    --gruvbox-head-med: #427b58;
+    --gruvbox-head-low: #98971a;
+    --gruvbox-text: #3c3836;
+    --gruvbox-text-strong: #b57614;
+    --gruvbox-text-weak: #7c6f64;
+    --gruvbox-interact: #689d6a;
+    --gruvbox-interact-alt: #427b58;
+    --gruvbox-important: #cc241d;
+    --gruvbox-pop: #8f3f71;
+    --gruvbox-accent: #d79921;
+}
+
+/* Default to dark mode variables */
+html {
+    /* Background colors */
+    --mat-sys-surface: #3c3836;
+    --mat-sys-surface-container: #282828;
+    --mat-sys-surface-container-high: #282828;
+    --mat-sys-surface-container-highest: #665c54;
+
+    /* On-surface colors (text) */
+    --mat-sys-on-surface: #ebdbb2;
+    --mat-sys-on-surface-variant: #a89984;
+
+    /* Primary colors */
+    --mat-sys-primary: #8ec07c;
+    --mat-sys-on-primary: #282828;
+    --mat-sys-primary-container: #689d6a;
+    --mat-sys-on-primary-container: #ebdbb2;
+
+    /* Secondary colors */
+    --mat-sys-secondary: #689d6a;
+    --mat-sys-on-secondary: #282828;
+    --mat-sys-secondary-container: #8ec07c;
+    --mat-sys-on-secondary-container: #282828;
+
+    /* Tertiary colors */
+    --mat-sys-tertiary: #d38690;
+    --mat-sys-on-tertiary: #282828;
+
+    /* Error colors */
+    --mat-sys-error: #fb4934;
+    --mat-sys-on-error: #282828;
+
+    /* Outline colors */
+    --mat-sys-outline: #665c54;
+    --mat-sys-outline-variant: #928374;
+
+    /* Other */
+    --mat-sys-scrim: #928374;
+}
+
+/* Apply light theme when explicitly requested */
+html[data-theme='light'] {
+    /* Background colors */
+    --mat-sys-surface: #fbf1c7 !important;
+    --mat-sys-surface-container: #ebdbb2 !important;
+    --mat-sys-surface-container-high: #ebdbb2 !important;
+    --mat-sys-surface-container-highest: #bdae93 !important;
+
+    /* On-surface colors (text) */
+    --mat-sys-on-surface: #3c3836 !important;
+    --mat-sys-on-surface-variant: #7c6f64 !important;
+
+    /* Primary colors */
+    --mat-sys-primary: #689d6a !important;
+    --mat-sys-on-primary: #fbf1c7 !important;
+    --mat-sys-primary-container: #427b58 !important;
+    --mat-sys-on-primary-container: #fbf1c7 !important;
+
+    /* Secondary colors */
+    --mat-sys-secondary: #689d6a !important;
+    --mat-sys-on-secondary: #fbf1c7 !important;
+    --mat-sys-secondary-container: #427b58 !important;
+    --mat-sys-on-secondary-container: #fbf1c7 !important;
+
+    /* Tertiary colors */
+    --mat-sys-tertiary: #8f3f71 !important;
+    --mat-sys-on-tertiary: #fbf1c7 !important;
+
+    /* Error colors */
+    --mat-sys-error: #cc241d !important;
+    --mat-sys-on-error: #fbf1c7 !important;
+
+    /* Outline colors */
+    --mat-sys-outline: #bdae93 !important;
+    --mat-sys-outline-variant: #928374 !important;
+
+    /* Other */
+    --mat-sys-scrim: #928374 !important;
+}
+
+/* Override body styles */
+body {
+    background-color: var(--mat-sys-surface) !important;
+    color: var(--mat-sys-on-surface) !important;
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Headings use Press Start 2P */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Card titles also use Press Start 2P */
+::ng-deep mat-card-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Toolbar/header text */
+::ng-deep mat-toolbar {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Dialog titles */
+::ng-deep mat-dialog-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Header buttons and title */
+::ng-deep mat-toolbar span,
+::ng-deep mat-toolbar .mat-mdc-button,
+::ng-deep mat-toolbar .mat-mdc-fab,
+::ng-deep mat-toolbar .mat-mdc-extended-fab {
+    font-family: 'Press Start 2P', cursive !important;
+    font-size: 10px !important;
+}
+
+/* Dashboard card headers */
+::ng-deep .featured-card mat-card-header,
+::ng-deep .featured-card mat-card-title {
+    font-family: 'Press Start 2P', cursive !important;
+}
+
+/* Material form field labels */
+::ng-deep .mat-mdc-form-field-label,
+::ng-deep .mat-mdc-floating-label {
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Material button text */
+::ng-deep .mat-mdc-button,
+::ng-deep .mat-mdc-raised-button,
+::ng-deep .mat-mdc-flat-button,
+::ng-deep .mat-mdc-fab,
+::ng-deep .mat-mdc-extended-fab {
+    font-family: 'Overpass', sans-serif !important;
+}
+
+/* Remove all border radius - sharp corners */
+* {
+    border-radius: 0 !important;
+}

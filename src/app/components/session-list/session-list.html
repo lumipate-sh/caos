@@ -36,7 +36,7 @@
         @for (session of filteredSessions; track session.metadata.id) {
             <mat-card class="session-card">
                 <mat-card-header>
-                    <mat-card-title>{{ formatDate(session.sessionDate) }}</mat-card-title>
+                    <mat-card-title>{{ session.sessionDate | formatDate }}</mat-card-title>
                     <mat-card-subtitle>{{ getGameTitle(session.gameId) }}</mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-actions align="end">

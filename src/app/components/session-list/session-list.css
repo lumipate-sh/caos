@@ -1,6 +1,6 @@
 h2 {
     margin-bottom: 24px;
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--mat-sys-on-surface);
 }
 
 .filters {
@@ -10,7 +10,7 @@ h2 {
     align-items: center;
     margin-bottom: 24px;
     padding: 16px;
-    background-color: rgba(255, 255, 255, 0.05);
+    background-color: var(--mat-sys-surface-container);
     border-radius: 8px;
 }
 
@@ -19,7 +19,7 @@ h2 {
 }
 
 .empty-message {
-    color: rgba(255, 255, 255, 0.6);
+    color: var(--mat-sys-on-surface-variant);
     font-style: italic;
 }
 
@@ -32,11 +32,11 @@ h2 {
 }
 
 .session-card {
-    background-color: rgba(255, 255, 255, 0.1);
-    color: rgba(255, 255, 255, 0.9);
+    background-color: var(--gruvbox-bg-alt);
+    color: var(--mat-sys-on-surface);
 }
 
 .notes {
     white-space: pre-wrap;
-    color: rgba(255, 255, 255, 0.8);
+    color: var(--mat-sys-on-surface-variant);
 }
