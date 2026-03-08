@@ -1,0 +1,103 @@
+.detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
+
+.header-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.detail-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-title {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.badge.owned {
+    background-color: #4caf50;
+}
+
+.badge.wishlist {
+    background-color: #ff9800;
+}
+
+.badge.type {
+    background-color: #2196f3;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+
+.field label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.field a {
+    color: #64b5f6;
+    word-break: break-all;
+}
+
+.notes {
+    white-space: pre-wrap;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 12px;
+    border-radius: 4px;
+}
+
+.metadata {
+    margin-top: 32px;
+    padding-top: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.metadata p {
+    margin: 4px 0;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.not-found {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}

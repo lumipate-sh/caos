@@ -1,0 +1,73 @@
+<h2>My RPG Collection</h2>
+
+<div class="filters">
+    <mat-form-field>
+        <mat-label>Owned</mat-label>
+        <mat-select [(ngModel)]="showOwned">
+            <mat-option [value]="null">All</mat-option>
+            <mat-option [value]="true">Owned</mat-option>
+            <mat-option [value]="false">Not Owned</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Wishlist</mat-label>
+        <mat-select [(ngModel)]="showWishlist">
+            <mat-option [value]="null">All</mat-option>
+            <mat-option [value]="true">On Wishlist</mat-option>
+            <mat-option [value]="false">Not on Wishlist</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field class="tags-filter">
+        <mat-label>Tags</mat-label>
+        <mat-select [(ngModel)]="selectedTags" multiple>
+            @for (tag of allTags; track tag) {
+                <mat-option [value]="tag">{{ tag }}</mat-option>
+            }
+        </mat-select>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" (click)="applyFilters()">Apply Filters</button>
+    <button mat-button (click)="clearFilters()">Clear</button>
+</div>
+
+@if (filteredItems.length === 0) {
+    <p class="empty-message">No RPG items found. Try adjusting your filters.</p>
+} @else {
+    <div class="items-grid">
+        @for (item of filteredItems; track item.metadata.id) {
+            <mat-card class="item-card">
+                <mat-card-header>
+                    <mat-card-title>{{ item.title }}</mat-card-title>
+                    <mat-card-subtitle>
+                        @if (item.isOwned) {
+                            <span class="badge owned">Owned</span>
+                        }
+                        @if (item.onWishList) {
+                            <span class="badge wishlist">Wishlist</span>
+                        }
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <mat-card-content>
+                    @if (item.itemTags && item.itemTags.length > 0) {
+                        <div class="tags">
+                            @for (tag of item.itemTags; track tag) {
+                                <span class="tag">{{ tag }}</span>
+                            }
+                        </div>
+                    }
+                </mat-card-content>
+                <mat-card-actions align="end">
+                    <a
+                        mat-icon-button
+                        [routerLink]="['/items', item.metadata.id]"
+                        aria-label="View details"
+                    >
+                        <mat-icon>visibility</mat-icon>
+                    </a>
+                </mat-card-actions>
+            </mat-card>
+        }
+    </div>
+}

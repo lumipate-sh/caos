@@ -1,0 +1,63 @@
+<div class="detail-container">
+    <div class="header-actions">
+        <a routerLink="/sessions" class="back-link">
+            <mat-icon>arrow_back</mat-icon>
+            Back to list
+        </a>
+        <button mat-icon-button (click)="openEditModal()" aria-label="Edit session">
+            <mat-icon>edit</mat-icon>
+        </button>
+    </div>
+
+    @if (session(); as sessionData) {
+        <mat-card class="detail-card">
+            <mat-card-header>
+                <mat-card-title class="detail-title">{{
+                    formatDate(sessionData.sessionDate)
+                }}</mat-card-title>
+                <mat-card-subtitle>
+                    <span class="game-title">{{ getGameTitle(sessionData.gameId) }}</span>
+                </mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content>
+                @if (sessionData.sessionNotes) {
+                    <div class="field">
+                        <label>Session Notes</label>
+                        <p class="notes">{{ sessionData.sessionNotes }}</p>
+                    </div>
+                } @else {
+                    <div class="field">
+                        <label>Session Notes</label>
+                        <p class="no-notes">No notes recorded for this session.</p>
+                    </div>
+                }
+
+                <div class="metadata">
+                    <p>
+                        <small>Session ID: {{ sessionData.metadata.id }}</small>
+                    </p>
+                    <p>
+                        <small>Added: {{ formatDate(sessionData.metadata.dateAdded) }}</small>
+                    </p>
+                    @if (sessionData.metadata.datesUpdated.length > 0) {
+                        <p>
+                            <small
+                                >Last updated:
+                                {{
+                                    formatDate(
+                                        sessionData.metadata.datesUpdated[
+                                            sessionData.metadata.datesUpdated.length - 1
+                                        ]
+                                    )
+                                }}</small
+                            >
+                        </p>
+                    }
+                </div>
+            </mat-card-content>
+        </mat-card>
+    } @else {
+        <p class="not-found">Session not found.</p>
+    }
+</div>

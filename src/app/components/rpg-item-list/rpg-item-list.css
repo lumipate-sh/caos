@@ -1,0 +1,73 @@
+h2 {
+    margin-bottom: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 24px;
+    padding: 16px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+}
+
+.filters mat-form-field {
+    min-width: 150px;
+}
+
+.filters .tags-filter {
+    min-width: 200px;
+}
+
+.empty-message {
+    color: rgba(255, 255, 255, 0.6);
+    font-style: italic;
+}
+
+.items-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 8px;
+}
+
+.item-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    margin-right: 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.badge.owned {
+    background-color: #4caf50;
+}
+
+.badge.wishlist {
+    background-color: #ff9800;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 8px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.8);
+}

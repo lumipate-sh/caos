@@ -15,6 +15,6 @@
 - - type
 - - - core rules
 - - - module 
-- - - accessory
+- - - periodic
 - - first-party (same as 'official'): is true/false
 - - - maybe this one is kind of useless. we can infer that from who is the author of the core rules. there might be some exceptions but i doubt it. 
